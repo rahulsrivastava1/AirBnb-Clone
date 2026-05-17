@@ -21,14 +21,10 @@ const AddPost = () => {
     setInput({ ...input, [name]: value });
   };
 
-  const onChangePicture = (e) => {
-    setInput({ ...input, photo: e.target.files[0] });
-  };
-
   const formSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/addPost`, input)
+      .post(`http://localhost:8000/addPost`, input)
       .then((res) => {
         alert("Your data is successfully placed in my database!");
         navigate("/");
@@ -42,67 +38,66 @@ const AddPost = () => {
   return (
     <div className="container">
       <div className="login-box">
-        <div className="row">
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xs-6">
+        <div className="row align-items-center">
+          <div className="col-12 col-md-6 text-center">
             <img
               src={photo}
               className="image-accomodation img-fluid"
-              alt="image"
+              alt="accommodation"
             />
           </div>
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xs-6">
+          <div className="col-12 col-md-6">
             <div className="accomodation">
               <h3 className="accomodation-header">
-                Post Your Accomodation Here!
+                Post Your Accommodation Here!
               </h3>
               <form className="form" onSubmit={formSubmit}>
                 <div className="form-group">
-                  <label htmlFor="type">Type of property:</label>
+                  <label htmlFor="type"><strong>Type of property:</strong></label>
                   <input
                     className="loginform"
                     type="text"
                     name="type"
                     id="type"
-                    placeholder="Hostels,Hotels,Flats etc."
+                    placeholder="Hostels, Hotels, Flats etc."
                     onChange={inputHandler}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="name">Name:</label>
+                  <label htmlFor="name"><strong>Name:</strong></label>
                   <input
                     className="loginform"
                     type="text"
                     name="name"
-                    id="name"
-                    placeholder="Name of your accomodation"
+                    id="post-name"
+                    placeholder="Name of your accommodation"
                     onChange={inputHandler}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="dates">Available dates:</label>
+                  <label htmlFor="dates"><strong>Available dates:</strong></label>
                   <input
                     className="loginform"
                     type="text"
                     name="dates"
                     id="dates"
-                    placeholder="available dates dd-mm--yyyy"
+                    placeholder="Available dates dd-mm-yyyy"
                     onChange={inputHandler}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="description">Description:</label>
+                  <label htmlFor="description"><strong>Description:</strong></label>
                   <textarea
                     name="description"
-                    rows="5"
-                    cols="75"
+                    rows="4"
                     id="description"
-                    placeholder="Write something about your accomodation"
+                    placeholder="Write something about your accommodation"
                     onChange={inputHandler}
                     className="textarea-accomodation loginform"
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="address">Address</label>
+                  <label htmlFor="address"><strong>Address:</strong></label>
                   <input
                     type="text"
                     name="address"
@@ -113,7 +108,7 @@ const AddPost = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="mobile">Contact No.</label>
+                  <label htmlFor="mobile"><strong>Contact No.:</strong></label>
                   <input
                     type="number"
                     name="mobile"

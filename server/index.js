@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 import route from "./route/userRoute.js";
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 const URL =
   "mongodb+srv://rahul:Rahul@cluster0.0xffg.mongodb.net/AirBnb?retryWrites=true&w=majority";

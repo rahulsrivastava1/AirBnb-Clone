@@ -15,22 +15,12 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-      </Routes>
-      <Routes>
-        <Route path="/login" element={<Login />}></Route>
-      </Routes>
-      <Routes>
-        <Route path="/signup" element={<Signup />}></Route>
-      </Routes>
-      <Routes>
-        <Route path="/forgot" element={<Forgot />}></Route>
-      </Routes>
-      <Routes>
-        <Route path="/addPost" element={<AddPost />}></Route>
-      </Routes>
-      <Routes>
-        <Route path="/posts" element={<Posts />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/addPost" element={<AddPost />} />
+        <Route path="/posts" element={<Posts />} />
       </Routes>
     </Router>
   );

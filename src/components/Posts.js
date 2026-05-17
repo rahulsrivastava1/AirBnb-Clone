@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const baseUrl = "http://localhost:5000/posts";
+const baseUrl = "http://localhost:8000/posts";
 
 const Posts = () => {
   const [post, setPost] = useState("");
@@ -16,7 +16,7 @@ const Posts = () => {
     return (
       <div className="container">
         <div className="post-container">
-          <h1 className="heading">Accomodations</h1>
+          <h1 className="heading">Accommodations</h1>
           <div className="col-12 col-sm-12 col-md-3 col-lg-3 col-lg-3">
             <h1>No data</h1>
           </div>
@@ -27,7 +27,7 @@ const Posts = () => {
     return (
       <div className="container">
         <div className="post-container">
-          <h1 className="heading">Accomodations</h1>
+          <h1 className="heading">Accommodations</h1>
           <div className="row my-5">
             {post.map((post) => (
               <div className="col-12 col-sm-12 col-md-4">

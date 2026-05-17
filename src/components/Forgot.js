@@ -18,7 +18,7 @@ const Forgot = () => {
   const formSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/forgot`, input)
+      .put(`http://localhost:8000/forgot`, input)
       .then((res) => {
         alert("Your password has been reset successfully!");
         e.target.reset();
@@ -38,7 +38,7 @@ const Forgot = () => {
   return (
     <div className="container">
       <div className="login-box">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xs-6">
             <img src={photo} className="image-login img-fluid" alt="image" />
           </div>
@@ -51,7 +51,7 @@ const Forgot = () => {
                 </label>
                 <input
                   className="loginform"
-                  type="text"
+                  type="email"
                   name="email"
                   id="email"
                   placeholder="Enter your account email"
@@ -64,7 +64,7 @@ const Forgot = () => {
                 </label>
                 <input
                   className="loginform"
-                  type="text"
+                  type="password"
                   name="newPassword"
                   id="password"
                   placeholder="Enter your new password"
@@ -77,7 +77,7 @@ const Forgot = () => {
                 </label>
                 <input
                   className="loginform"
-                  type="text"
+                  type="password"
                   name="confirmNewPassword"
                   id="confirmpassword"
                   placeholder="Enter your confirm password"

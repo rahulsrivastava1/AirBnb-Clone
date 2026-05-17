@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  min-height: 100%;
   background-color: white;
 }
 
@@ -96,17 +96,20 @@ code {
 
 /* Home Page CSS */
 .intro {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("./images/homebg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
-  position: absolute;
-  width: 100%;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 56px; /* account for fixed navbar */
 }
 
 .intro-box {
-  margin-top: 155px;
+  width: 100%;
+  padding: 0 15px;
 }
 
 .heading {
@@ -116,50 +119,51 @@ code {
 .btn-search {
   padding: 25px;
   margin-top: 10px;
-  margin-left: 50px;
   width: 100%;
 }
 
 /* About page CSS */
 .about {
-  position: absolute;
-  margin-top: 105vh;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 .imageabout {
   height: 350px;
   width: 400px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .about-text {
-  margin-left: -100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .custom-card {
   margin-top: 35px;
   border-radius: 10px;
-  width: 21em;
+  height: 100%;
 }
 
 .form-group {
-  padding: 10px;
-  margin: 25px;
-  justify-content: center;
-  align-items: center;
+  padding: 10px 0;
 }
 
 .signup {
-  margin-left: 155px;
+  margin-right: 15px;
 }
 
 .inputemail {
-  margin-left: 30px;
   width: 35%;
+  padding: 6px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
 }
 
 .buttons {
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 
 .foo a {
@@ -171,66 +175,73 @@ code {
 .last {
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
-  height: 50px;
-  position: absolute;
-  margin-top: 290vh;
+  min-height: 50px;
   text-align: center;
   align-items: center;
   font-weight: 500;
   display: flex;
   justify-content: center;
+  padding: 10px 0;
 }
 
 /* Login Page CSS */
 
 .login-box {
-  margin-top: 50px;
+  margin-top: 80px;
+  padding-bottom: 40px;
 }
 
 .image-login {
-  margin-top: 100px;
-  height: 300px;
-  width: 500px;
+  margin-top: 50px;
+  max-height: 350px;
+  width: auto;
+  max-width: 100%;
 }
 
 .login-social {
-  margin-top: 100px;
-  margin-left: 150px;
+  margin-top: 50px;
   font-weight: 500;
+  margin-right: 15px;
 }
 
 .social-header {
   display: flex;
+  align-items: center;
 }
 
 .btn-google {
-  height: 40px;
-  margin-top: 90px;
-  margin-left: 25px;
-  border-radius: 50%;
+  margin-top: 40px;
 }
 
 .text {
-  margin-left: 240px;
+  text-align: center;
+  margin: 15px 0;
 }
 
 .loginform {
   width: 100%;
-  background-color: rgb(240, 225, 206);
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  margin-top: 4px;
 }
 
-.form-group {
-  padding: 0px;
+.loginform:focus {
+  border-color: #0c56d0;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(12, 86, 208, 0.15);
 }
 
 .pass {
   color: black;
   text-decoration: none;
-  margin-left: 235px;
+  margin-left: auto;
 }
 
 .login-btn {
-  width: 35%;
+  width: 100%;
+  max-width: 200px;
 }
 
 .link {
@@ -240,84 +251,103 @@ code {
 
 /* Register Page CSS */
 .signup-container {
-  height: 105vh;
+  min-height: 100vh;
   background-image: url("./images/homebg.jpg");
   background-repeat: no-repeat;
   background-position: center center;
-  position: absolute;
-  width: 101%;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 56px; /* account for fixed navbar */
+  padding-bottom: 30px;
 }
 
 .signup-box {
   background-color: white;
-  width: 45%;
-  height: 100vh;
-  margin-top: 55px;
-  margin-left: 350px;
-  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .heading-signup {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .signup-form input {
-  width: 75%;
-  margin-left: 75px;
+  width: 100%;
 }
 
 .signup-form label {
-  margin-left: 75px;
   font-weight: 500;
 }
 
 .register-btn {
-  margin-left: 75px;
-  width: 70%;
+  width: 100%;
   margin-top: 0;
 }
 
 .checkbox-container {
-  margin-left: 100px;
+  margin-top: 10px;
 }
 
 .linktosignin {
-  margin-left: 150px;
   display: flex;
+  justify-content: center;
+  gap: 8px;
   font-size: 17px;
   color: black;
+  margin-top: 10px;
 }
 
 /* Forgot page CSS */
 .forgot-form {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 /* Add Post page CSS */
 .accomodation {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .accomodation-header {
-  margin-left: 25px;
+  margin-bottom: 20px;
 }
 
 .image-accomodation {
-  margin-top: 170px;
-  height: 500px;
-  width: 500px;
+  margin-top: 100px;
+  max-height: 500px;
+  max-width: 100%;
+  width: auto;
 }
 
 .textarea-accomodation {
-  margin-left: 0px;
-  width: 500px;
+  width: 100% !important;
+  min-height: 120px;
 }
 
 /* Post Page CSS */
 .post-container {
-  margin-top: 55px;
+  margin-top: 80px;
+  padding-bottom: 40px;
+}
+
+/* Newsletter / Footer Section */
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+footer.my-5 .row {
+  margin-top: 30px;
 }
 
 /* Media Query */
@@ -327,90 +357,100 @@ code {
     top: 40px !important;
   }
   .imageabout {
-    width: 350px;
-    margin-top: 50px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-top: 30px;
   }
   .about-text {
-    margin-left: 0px;
-    margin-top: 5px;
+    margin-top: 20px;
   }
   .custom-card {
-    width: 22rem;
+    width: 100%;
   }
   .btn-search {
     margin-left: 0px;
   }
   .signup {
-    margin-left: 30px;
-    padding: 10px;
+    margin-right: 0;
   }
   .inputemail {
-    margin-left: 0px;
     width: 100%;
-    padding: 10px;
+    padding: 8px;
   }
   .buttons {
-    margin-left: 5rem;
+    margin-left: 0;
     margin-top: 10px;
+    width: 100%;
+  }
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .foo {
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 20px;
+  }
+  .foo a {
+    display: block;
+    padding: 2px 0;
   }
   .last {
-    display: none;
+    margin-top: 0;
   }
   .social-header {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .login-social {
     margin-left: 0px;
+    margin-top: 30px;
   }
   .text {
-    margin-left: 150px;
+    text-align: left;
+    margin: 10px 0;
   }
   .pass {
-    margin-left: 75px;
+    margin-left: 0;
     font-size: 12px;
+    display: block;
+    margin-top: 5px;
   }
   .btn-google {
-    width: 30%;
+    width: auto;
+  }
+  .image-login {
+    margin-top: 30px;
+    max-height: 250px;
   }
 
   .signup-box {
-    background-color: white;
-    width: 90%;
-    margin-left: 10px;
+    width: 95%;
+    padding: 20px;
+    margin: 20px auto;
   }
   .signup-form input {
-    width: 75%;
-    margin-left: 45px;
+    width: 100%;
   }
   .signup-form label {
-    margin-left: 45px;
+    margin-left: 0;
   }
   .checkbox-container {
-    margin-left: 30px;
     font-size: 12px;
   }
   .register-btn {
-    margin-left: 35px;
-    width: 70%;
+    width: 100%;
   }
   .linktosignin {
-    margin-left: 50px;
     font-size: 14px;
   }
   .textarea-accomodation {
-    width: 300px;
+    width: 100% !important;
+  }
+  .image-accomodation {
+    margin-top: 30px;
+  }
+  .accomodation {
+    margin-top: 30px;
   }
 }
-
-/* @media screen and (max-width: 992px) {
-  .intro-box {
-    margin-top: 135px;
-  }
-} */

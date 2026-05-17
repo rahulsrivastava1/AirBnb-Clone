@@ -20,7 +20,7 @@ const Login = () => {
   };
 
   const onLoginFailure = (res) => {
-    alert("Something went wrong.Kindly retry!");
+    alert("Something went wrong. Kindly retry!");
   };
 
   const inputHandler = (e) => {
@@ -31,7 +31,7 @@ const Login = () => {
   const formSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/signin`, input)
+      .post(`http://localhost:8000/signin`, input)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         alert("You are logged in now!");
@@ -52,11 +52,11 @@ const Login = () => {
   return (
     <div className="container">
       <div className="login-box">
-        <div className="row">
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xs-6">
-            <img src={photo} className="image-login img-fluid" alt="image" />
+        <div className="row align-items-center">
+          <div className="col-12 col-md-6 text-center">
+            <img src={photo} className="image-login img-fluid" alt="login illustration" />
           </div>
-          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xs-6">
+          <div className="col-12 col-md-6">
             <div className="social-header">
               <p className="login-social">Sign in with</p>
               <GoogleLogin
@@ -69,49 +69,49 @@ const Login = () => {
                 className="btn-google"
               />
             </div>
-            <div className="divider">
-              <p className="text">
-                <strong>Or</strong>
-              </p>
+            <div className="text">
+              <strong>Or</strong>
             </div>
             <form className="form" onSubmit={formSubmit}>
               <div className="form-group">
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="login-email"><strong>Email:</strong></label>
                 <input
                   className="loginform"
-                  type="text"
+                  type="email"
                   name="email"
-                  id="email"
+                  id="login-email"
                   placeholder="Enter your email address"
                   onChange={inputHandler}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="login-password"><strong>Password:</strong></label>
                 <input
                   className="loginform"
-                  type="text"
+                  type="password"
                   name="password"
-                  id="password"
+                  id="login-password"
                   placeholder="Enter your password"
                   onChange={inputHandler}
                 />
               </div>
-              <div>
-                <div className="form-check form-group">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
-                  <label
-                    className="form-check-label"
-                    htmlFor="flexCheckDefault"
-                  >
-                    Remember me
-                  </label>
-                  <Link to="/forgot" className="pass">
+              <div className="form-group">
+                <div className="d-flex align-items-center flex-wrap gap-2">
+                  <div className="form-check mb-0">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="rememberMe"
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor="rememberMe"
+                    >
+                      Remember me
+                    </label>
+                  </div>
+                  <Link to="/forgot" className="pass ms-auto">
                     Forgot Password?
                   </Link>
                 </div>
@@ -120,9 +120,9 @@ const Login = () => {
                 <button className="btn btn-primary login-btn">LOGIN</button>
               </div>
               <div className="form-group">
-                <strong>Don't have an account?</strong>
+                <strong>Don't have an account?</strong>{" "}
                 <Link to="/signup" className="link">
-                  <strong> Register</strong>
+                  <strong>Register</strong>
                 </Link>
               </div>
             </form>
